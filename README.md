@@ -5,8 +5,8 @@ Provides a developer interface for set up a BLE ipv6 network that registers in a
 
 More Info: https://github.com/plopezm/JUbiboxOMA/wiki/1.-Home
 
-Binaries
-========
+Installation
+============
 
 Go to bin/ folder and executes the .jar for launch the test
 
