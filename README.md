@@ -8,9 +8,12 @@ More Info: https://github.com/plopezm/JUbiboxOMA/wiki/1.-Home
 Installation
 ============
 
+This software requires linux OS and root user.
+
 Go to bin/ folder and executes the .jar for launch the test
 
-Example: sudo java -jar JUbiboxOMA.jar
+- Usage: sudo java -jar JUbiboxOMA.jar "my ipv4 interface address"
+- Example: sudo java -jar JUbiboxOMA.jar 192.168.0.2
 
 Source Example
 ==============
