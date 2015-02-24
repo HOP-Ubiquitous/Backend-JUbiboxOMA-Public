@@ -10,7 +10,7 @@ Installation
 
 Go to bin/ folder and executes the .jar for launch the test
 
-- Usage: sudo java -jar JUbiboxOMA.jar <my ipv4 interface address>
+- Usage: sudo java -jar JUbiboxOMA.jar "<my ipv4 interface address>"
 - Example: sudo java -jar JUbiboxOMA.jar 192.168.0.2
 
 Source Example
