@@ -23,23 +23,33 @@ public class JUbiboxCLI {
 	
 	public static void main(String[] args) {
 		
-		
+
+		if(args.length != 1){
+			System.out.println("Usage: sudo java -jar JUbiboxOMA.jar <my ipv4 interface address>");
+			System.out.println("Example: sudo java -jar JUbiboxOMA.jar 192.168.0.2");
+			return;
+		}
 		
 		//Creating Ubibox instances
 		//This constructor will load the native library
 		final Ubibox ubi = new Ubibox();
 		
 		//Initializes Ubibox with mac filter and with a specific OMA server
-		
 		//The format must be as the example and the address will be in HEX format
 //		ubi.init("/dev/ttyACM0", "/dev/ttyACM1",
 //				"wlan0", "aaaa::121",
 //				"/64", "192.168.0.2",true, "coaps://[0000:0000:0000:0000:0000:0000:7f00:0001]:5683","64:B0:7C:04:A5:78|01:02:03:04:05:06");
 		
+		
 		//Initializes Ubibox whithout mac filter and default oma server (gw localhost) 
+//		ubi.init("/dev/ttyACM0", "/dev/ttyACM1",
+//				"wlan0", "aaaa::121",
+//				"/64", "192.168.0.2",true, null, null);
+
+				
 		ubi.init("/dev/ttyACM0", "/dev/ttyACM1",
 				"wlan0", "aaaa::121",
-				"/64", "192.168.0.2",true, null, null);
+				"/64", args[0],true, "coaps://[0000:0000:0000:0000:0000:0000:7f00:0001]:5683",null);
 		
 		Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
 			
