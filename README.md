@@ -15,8 +15,23 @@ Go to bin/ folder and executes the .jar for launch the test
 - Usage: sudo java -jar JUbiboxOMA.jar "my ipv4 interface address"
 - Example: sudo java -jar JUbiboxOMA.jar 192.168.0.2
 
-Source Example
-==============
+Execution
+=========
+
+The bin/ directory contains an example java executable. When JUbiboxOMA.jar is executed, a simple command line will appear.
+
+IMAGE
+
+The CLI provides the following functionality:
+- scan
+- connect
+- disconnect
+- leshan commands
+- exit
+
+
+Binary source code
+==================
 
 Go to src/eu/hop/examples/ubibox/cli/JUbiboxCLI.java to see an example of use of JUbiboxOMA
 
