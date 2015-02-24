@@ -10,6 +10,8 @@ Binaries
 
 Go to bin/ folder and executes the .jar for launch the test
 
+Example: sudo java -jar JUbiboxOMA.jar
+
 Source Example
 ==============
 
