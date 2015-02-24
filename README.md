@@ -15,7 +15,7 @@ Example: sudo java -jar JUbiboxOMA.jar
 Source Example
 ==============
 
-Go to src/eu/hop/examples/ubibox/cli/JUbiboxCLI.java to see an example of use of JUbiboxLib
+Go to src/eu/hop/examples/ubibox/cli/JUbiboxCLI.java to see an example of use of JUbiboxOMA
 
 Ubibox class explanation
 ========================
