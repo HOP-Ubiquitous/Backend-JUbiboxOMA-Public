@@ -33,8 +33,9 @@ Initializes gateway with the parameters. This method will be called at statup. T
 - networkUbiboxAddressIPv6: The gateway network address (IPv6).
 - networkUbiboxAddressMaskIPv6: The gateway network mask.
 - networkUbiboxAddressMaskIPv4: Network ipv4 address to bind.
-- autoconnect: If the gateway supports autoconnect.
-- omaserv: Set if the gateway must to stablish the connection with a specific OMA server
+- autoconnect: If the gateway supports autoconnect (true | false).
+- omaserv: Set if the gateway must to stablish the connection with a specific OMA server (null for default server)
+- macFilter: Mac whitelist. (null for all)
 
 ```	
 	public native boolean init(String mainSerialPort, String auxSerialPort,
@@ -42,6 +43,8 @@ Initializes gateway with the parameters. This method will be called at statup. T
 			String networkUbiboxAddressMaskIPv6, String networkUbiboxAddressIPv4,
 			boolean autoconnect, String omaserv, String macFilter);
 ```	
+On example class it is showed how to use this method.
+
 
 Scan method
 ===========
