@@ -30,14 +30,17 @@ Initializes gateway with the parameters. This method will be called at statup. T
 - mainSerialPort: String with the device port (/dev/ttyACM0)
 - auxSerialPort: Reserved.
 - networkInterface: The network interface where the gateway will bind.
-- networkUbiboxAddress: The gateway network address (IPv6).
-- networkUbiboxAddressMask: The gateway network mask.
+- networkUbiboxAddressIPv6: The gateway network address (IPv6).
+- networkUbiboxAddressMaskIPv6: The gateway network mask.
+- networkUbiboxAddressMaskIPv4: Network ipv4 address to bind.
 - autoconnect: If the gateway supports autoconnect.
+- omaserv: Set if the gateway must to stablish the connection with a specific OMA server
 
 ```	
 	public native boolean init(String mainSerialPort, String auxSerialPort,
-			String networkInterface, String networkUbiboxAddress,
-			String networkUbiboxAddressMask, boolean autoconnect);
+			String networkInterface, String networkUbiboxAddressIPv6,
+			String networkUbiboxAddressMaskIPv6, String networkUbiboxAddressIPv4,
+			boolean autoconnect, String omaserv, String macFilter);
 ```	
 
 Scan method
