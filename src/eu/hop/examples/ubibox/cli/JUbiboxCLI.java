@@ -36,7 +36,7 @@ public class JUbiboxCLI {
 //				"wlan0", "aaaa::121",
 //				"/64", "192.168.0.2",true, "coaps://[0000:0000:0000:0000:0000:0000:7f00:0001]:5683","64:B0:7C:04:A5:78|01:02:03:04:05:06");
 		
-		//Initializes Ubibox whithout mac filter and oma server
+		//Initializes Ubibox whithout mac filter and default oma server (gw localhost) 
 		ubi.init("/dev/ttyACM0", "/dev/ttyACM1",
 				"wlan0", "aaaa::121",
 				"/64", "192.168.0.2",true, null, null);
