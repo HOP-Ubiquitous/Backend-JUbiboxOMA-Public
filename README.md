@@ -18,11 +18,11 @@ Go to bin/ folder and executes the .jar for launch the test
 Execution
 =========
 
-The bin/ directory contains an example java executable. When JUbiboxOMA.jar is executed, a simple command line will appear.
+The bin/ directory contains an example java executable. When JUbiboxOMA.jar is executed, a simple command line will appears.
 
 IMAGE
 
-The CLI provides the following functionality:
+The CLI provides the following functionalities:
 - scan
 - connect
 - disconnect
