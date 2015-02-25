@@ -22,7 +22,7 @@ The bin/ directory contains an example java executable. When JUbiboxOMA.jar is e
 
 IMAGE
 
-The CLI provides the following functionalities:
+The example CLI provides the following functionalities:
 - scan
 - connect
 - disconnect
