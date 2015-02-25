@@ -12,24 +12,26 @@ This software requires linux OS and root user.
 
 Go to bin/ folder and executes the .jar for launch the test
 
-- Usage: sudo java -jar JUbiboxOMA.jar "my ipv4 interface address"
-- Example: sudo java -jar JUbiboxOMA.jar 192.168.0.2
 
 Execution
 =========
 
-The bin/ directory contains an example java executable. When JUbiboxOMA.jar is executed, a simple command line will appears.
+The bin/ directory contains an example java executable. When JUbiboxOMA.jar is executed, a simple command line will appears. By default the JUbiboxOMA.jar it is executed in autoconnect mode. The default OMA server destination will be localhost.
 
-IMAGE
+- Usage: sudo java -jar JUbiboxOMA.jar "my ipv4 interface address" ["destination OMA server address"]
+- Example: 
+	- sudo java -jar JUbiboxOMA.jar 192.168.0.2
+	- sudo java -jar JUbiboxOMA.jar 192.168.0.2 188.34.32.1
 
 The example CLI provides the following functionalities:
-- scan
-- connect
-- disconnect
-- leshan commands
-- exit
 
-TBC
+- scan: Launchs a scan to discover the available BLE devices. 
+- connect <dev_id>: Connects with the selected device.
+- disconnect <dev_id>: Disconnects selected device
+- leshan http client: Type leshan to see the possibilities.
+- exit: Close CLI.
+
+NOTE: If autoconnect is enabled, the JUbiboxOMA is set as automatic router, so the commands will be useless except "leshan" commands.
 
 Binary source code
 ==================

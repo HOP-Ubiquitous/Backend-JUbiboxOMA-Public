@@ -1,6 +1,8 @@
 package eu.hop.examples.ubibox.cli;
 
 import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -21,11 +23,23 @@ public class JUbiboxCLI {
 	private static HashMap<Integer, BLEDevice> myDevices;
 	private static HashMap<String, OMAClient> omaClients;
 	
+	
+	public static long ipToLong(String ipAddress) {
+	    long result = 0;
+	    String[] atoms = ipAddress.split("\\.");
+
+	    for (int i = 3; i >= 0; i--) {
+	        result |= (Long.parseLong(atoms[3 - i]) << (i * 8));
+	    }
+
+	    return result & 0xFFFFFFFF;
+	  }
+	
 	public static void main(String[] args) {
 		
 
-		if(args.length != 1){
-			System.out.println("Usage: sudo java -jar JUbiboxOMA.jar <my ipv4 interface address>");
+		if(args.length == 0 || args.length > 2){
+			System.out.println("Usage: sudo java -jar JUbiboxOMA.jar <my ipv4 interface address> [oma-server address]");
 			System.out.println("Example: sudo java -jar JUbiboxOMA.jar 192.168.0.2");
 			return;
 		}
@@ -46,10 +60,24 @@ public class JUbiboxCLI {
 //				"wlan0", "aaaa::121",
 //				"/64", "192.168.0.2",true, null, null);
 
+		String ipResult = null;
+		if(args.length == 2){
+			
+			try {
+				InetAddress omaserv = InetAddress.getByName(args[1]);
+				String iphex = Long.toHexString(ipToLong(args[1]));
+				ipResult = iphex.substring(0, 4)+":"+iphex.substring(4, 8);
+				ipResult = "coaps://[0000:0000:0000:0000:0000:0000:"+ipResult+"]:5683";
+				System.out.println("OMA destination URL: "+ipResult);
+			} catch (UnknownHostException e) {
+				e.printStackTrace();
+				return;
+			}			
+		}		
 				
 		ubi.init("/dev/ttyACM0", "/dev/ttyACM1",
 				"wlan0", "aaaa::121",
-				"/64", args[0],true, "coaps://[0000:0000:0000:0000:0000:0000:7f00:0001]:5683",null);
+				"/64", args[0],true, ipResult,null);
 		
 		Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
 			
