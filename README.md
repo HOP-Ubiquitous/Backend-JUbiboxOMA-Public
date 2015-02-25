@@ -8,7 +8,7 @@ More Info: https://github.com/plopezm/JUbiboxOMA/wiki/1.-Home
 Installation
 ============
 
-This software requires linux OS and root user.
+This software requires linux OS and root user. Also it is required JRE 1.8 to execute this software.
 
 Go to bin/ folder and executes the .jar for launch the test
 
