@@ -3,7 +3,7 @@ JUbiboxOMA
 
 Provides a developer interface for set up a BLE ipv6 network that registers in a Leshan server.
 
-More Info: https://github.com/plopezm/JUbiboxOMA/wiki/1.-Home
+For more info see wiki section.
 
 Installation
 ============
